@@ -18,9 +18,9 @@ No installation is required to use the Dot Plot program. Simply download the Pyt
 
 ### Example
 
-```python
-import dot_plot
-
+```python 
+from dot import plot_grid
+ 
 # Define two DNA sequences
 sequence1 = "ATCGATCGATCG"
 sequence2 = "ATCGATAGCTAG"
@@ -46,7 +46,8 @@ No installation is required to use the ORFs program. Simply download the Python 
 ### Example
 
 ```python
-import orfs_finder
+
+from orfs import find_orfs
 
 # Define DNA sequence
 dna_sequence = "ATGAGCTAGCTAGTAA"
@@ -63,11 +64,11 @@ for start, end, sequence in orfs:
 
 ### Introduction
 
-The Testing module contains stress tests and unit tests for the Dot Plot and ORFs programs to ensure their functionality and reliability.
+The Testing module contains stress tests /unit for ORFs programs to ensure their functionality and reliability.
 
 ### Usage
 
-To run the tests, execute the test script provided for each program. The tests will verify that the programs produce the expected output for different input scenarios.
+To run the tests, execute the test script provided for each program. The tests will verify that the programs produce the expected output for different input scenarios.Using random sequence of DNA
 
 ### Installation
 
@@ -76,10 +77,8 @@ No installation is required to run the tests. Simply download the test scripts a
 ### Example
 
 ```bash
-python test_dot_plot.py
-python test_orfs.py
+from test import stress_test_find_orfs
+stress_test_find_orfs(num_tests=10, max_sequence_length=50, min_orf_length=3)
+
 ```
 
-### Note
-
-Make sure to provide appropriate input data for the tests to validate the functionality of the programs effectively.

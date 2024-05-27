@@ -81,4 +81,71 @@ from test import stress_test_find_orfs
 stress_test_find_orfs(num_tests=10, max_sequence_length=50, min_orf_length=3)
 
 ```
+# Neighbor Joining Algorithm
+
+## Introduction
+
+This Python script implements the Neighbor Joining algorithm, a method in bioinformatics for the construction of phylogenetic trees from a distance matrix representing the evolutionary distances between pairs of species or taxa.
+## Without using BioPython ApplyNeighbourJoining.py
+## Requirements
+
+- pandas
+- numpy
+- matplotlib
+- networkx
+
+You can install the required packages via pip:
+
+```bash
+pip install pandas numpy matplotlib networkx
+```
+## Input
+The input distance matrix should be a square matrix where each cell represents the evolutionary distance between two species or taxa. The distances should be symmetric, i.e., the distance from species A to species B should be the same as the distance from species B to species A.
+Example input:
+
+```python
+distMatrix = pd.DataFrame(
+    [
+        [0, 0.17, 0.59, 0.59, 0.77, 0.81, 0.87],
+        [0.17, 0, 0.6, 0.59, 0.77, 0.82, 0.86],
+        [0.59, 0.6, 0, 0.13, 0.75, 0.73, 0.86],
+        [0.59, 0.59, 0.13, 0, 0.75, 0.74, 0.88],
+        [0.77, 0.77, 0.75, 0.75, 0, 0.8, 0.93],
+        [0.81, 0.82, 0.73, 0.74, 0.8, 0, 0.9],
+        [0.87, 0.86, 0.86, 0.88, 0.93, 0.9, 0]
+    ]
+)
+```
+## Output
+The script will generate two files:
+
+- joins.txt: Contains the details of each join made during the neighbor joining process.
+- neighbor_joining_tree.png: Visual representation of the constructed neighbor joining tree.
+- Additionally, during execution, the script will write the join details to joins_and_distances.txt.
+## With using BioPython ApplyNeighbourJoiningBioPython.py
+
+## Requirements
+
+- Biopython
+
+You can install Biopython via pip:
+
+```bash
+pip install biopython
+```
+## Input
+The input distance matrix should be a square matrix where each cell represents the evolutionary distance between two species or taxa. The distances should be symmetric, i.e., the distance from species A to species B should be the same as the distance from species B to species A.
+Example input:
+
+```python
+distance_matrix_data = [
+    [0, 0.5, 0.2, 0.7],
+    [0.5, 0, 0.4, 0.9],
+    [0.2, 0.4, 0, 0.6],
+    [0.7, 0.9, 0.6, 0]
+]
+```
+## Output
+The script will generate a file named tree_info.txt which contains the tree structure and branch lengths. Additionally, it will display the phylogenetic tree graphically.
+
 
